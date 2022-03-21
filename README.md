@@ -68,7 +68,7 @@ La manera más sencilla y limpia es instalarlo usando docker compose. Para no ut
    
    1. si queremos usar una version en concreto hacemos un checkout al tag correspondiente `git checkout tags/ckan-2.9.2`
    
-4. crear un archivo .env en la raíz del proyecto `cp .env-template .env`
+4. crear un archivo .env en la raíz del proyecto `cp .env-template .env` en el caso del repo de desidedatum o en contrib/docker  en el caso del repo oficial de ckan
    
 5. dirigirme donde se encuentra el archivo `docker-compose.yml` y ejecutar
    ```
@@ -76,7 +76,7 @@ La manera más sencilla y limpia es instalarlo usando docker compose. Para no ut
    ```
 6. si da error de conexión con la bbdd ejecutar `docker-compose restart ckan` algunas veces
    
-7. Para poder usar el ckan de desidedatum debo tener un usuario git que enga permisos para conectarse al repo de la empresa.
+7. Para poder usar el ckan de desidedatum debo tener un usuario git que tenga permisos para conectarse al repo de la empresa.
 
 8. 
 
