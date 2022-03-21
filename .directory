@@ -1,0 +1,13 @@
+[Desktop Entry]
+Icon=/home/david/.local/share/icons/ckan.png
+
+[Dolphin]
+GroupedSorting=true
+PreviewsShown=false
+SortRole=tags
+Timestamp=2022,3,21,7,40,46.295
+Version=4
+ViewMode=1
+
+[Settings]
+HiddenFilesShown=true
