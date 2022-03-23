@@ -14,8 +14,6 @@ En 2016, Open Knowledge Foundation comenzó a trabajar para cambiar el framework
 CKAN 2.9, es compatible con Python 2.7 y Python 3.6 o superior
 CKAN 3.0 solo admitirá Python 3.
 
-
-
 - ## Datasets and resources 
 
 En CKAN los datos se publican en unidades denominadas "datasets". Un conjunto de datos es un paquete de datos; por ejemplo, podrían ser las estadísticas de delitos de una región. Cuando los usuarios buscan datos, los resultados de búsqueda que ven serán conjuntos de datos individuales.
@@ -78,8 +76,27 @@ La manera más sencilla y limpia es instalarlo usando docker compose. Para no ut
    
 7. Para poder usar el ckan de desidedatum debo tener un usuario git que tenga permisos para conectarse al repo de la empresa.
 
-8. 
+8. Una vez levantado el ckan para entrar hay que ir a la url especificada en `CKAN_SITE_URL` que se encuentra en el `.env` que hemos creado `ckan/contrib/docker/.env`
 
+9. Al levantar docker debemos tener corriendo 5 contenedores:
+    
+   1.  **ckan**
+   2.  **db** -> la db de ckan, posteriormente correrá el datastore de CKAN dentro de database
+   3.  **redis** -> una imagen pre-built de Redis(Remote Dictionary Server) es una Base de Datos con un motor de almacenamiento Clave-Valor, se guarda en memoria RAM en lugar de persistir en el disco. 
+   4. **Solr** -> es una imagen pre-build configurada para CKAN, Solar.  Solr es un motor de búsqueda basado en Apache, escrito en el lenguaje de programación Java y basado en la librería de Java Lucene, que permite integrar motores de búsqueda verticales.
+   Un motor de búsqueda vertical, a diferencia de un "motor de búsqueda general", puede enfocarse en un segmento específico de contenido online. 
+   1. **datapusher** -> una imagen pre-build de datapusher
+
+10. Se habrá creado 4 Docker volumes, se identifican xq van precedidos del nombre proyecto de docker-compose(por defecto esta guia es docker o bien con el valor de la variable COMPOSE_PROJECT_NAME)
+    ```
+    docker volume ls | grep docker
+    ```
+    1. **docker_ckan_config** -> dnd se aloja el archivo `production.ini`  
+    2. **docker_ckan_home** -> dnd se encuentra en venv de ckan 
+    3. **docker_ckan_storage**     
+    4. **docker_pg_data**     
+
+11. 
 
 
 
